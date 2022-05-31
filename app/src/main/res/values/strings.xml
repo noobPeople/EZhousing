@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">EZHousing</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="user_image">user image</string>
+    <string name="status">Status</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="kode_promo">Kode promo</string>
+    <string name="panduan_aplikasi">Panduan aplikasi</string>
+    <string name="sk">Syarat dan ketentuan</string>
+    <string name="kebijakan_dan_privasi">Kebijakan dan privasi</string>
+    <string name="pusat_bantuan">Pusat bantuan</string>
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="save_profile">Simpan</string>
+    <string name="hi">Hi, Zakky</string>
+    <string name="ingin_cari_tanah">Ingin cari tanah dimana?</string>
+    <string name="makin_hemat_makin_seru">Makin hemat makin seru</string>
+    <string name="terfavorit">Terfavorit</string>
+    <string name="see_all">See all</string>
+    <string name="chat">Chat</string>
+    <string name="keranjang">Keranjang</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="already_have_an_account">Already have an account? Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rekomendasi">Rekomendasi</string>
+    <string name="register">Register</string>
+</resources>
