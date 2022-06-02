@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EZHousing">
         <activity
-            android:name=".ui.ResetPasswordActivity"
+            android:name=".ui.auth.resetpassword.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".ui.chat.ChatActivity"
@@ -31,7 +31,7 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".ui.register.RegisterActivity"
+            android:name="com.okky.ezhousing.ui.auth.register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -1,4 +1,4 @@
-package com.okky.ezhousing.ui.register
+package com.okky.ezhousing.ui.auth.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

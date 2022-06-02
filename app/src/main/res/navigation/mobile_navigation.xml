@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.okky.ezhousing.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailTanahFragment"
+            app:destination="@id/detailTanahFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -36,5 +40,23 @@
             app:destination="@id/navigation_profile"
             app:popUpTo="@id/navigation_profile"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTanahFragment"
+        android:name="com.okky.ezhousing.ui.DetailTanahFragment"
+        android:label="fragment_detail_tanah"
+        tools:layout="@layout/fragment_detail_tanah" >
+        <argument
+            android:name="tanah"
+            app:argType="string"
+            android:defaultValue="default tanah" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="default description" />
+        <argument
+            android:name="photo"
+            app:argType="string"
+            android:defaultValue="default photo" />
     </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package com.okky.ezhousing.ui
+package com.okky.ezhousing.ui.auth.resetpassword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
