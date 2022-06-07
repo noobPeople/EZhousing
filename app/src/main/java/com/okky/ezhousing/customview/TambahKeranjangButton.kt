@@ -32,7 +32,7 @@ class TambahKeranjangButton : AppCompatButton {
         setTextColor(txtColor)
         textSize = 12f
         gravity = Gravity.CENTER
-        text = "Tambah keranjang"
+//        text = "Beli"
     }
 
     private fun init() {

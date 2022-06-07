@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailTanahFragment"
-        android:name="com.okky.ezhousing.ui.DetailTanahFragment"
+        android:name="com.okky.ezhousing.ui.home.DetailTanahFragment"
         android:label="fragment_detail_tanah"
         tools:layout="@layout/fragment_detail_tanah" >
         <argument
@@ -58,5 +58,49 @@
             android:name="photo"
             app:argType="string"
             android:defaultValue="default photo" />
+        <action
+            android:id="@+id/action_detailTanahFragment_to_paymentPopupFragment"
+            app:destination="@id/paymentPopupFragment" />
+        <action
+            android:id="@+id/action_detailTanahFragment_to_prediksiFragment"
+            app:destination="@id/prediksiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentPopupFragment"
+        android:name="com.okky.ezhousing.ui.paymentpopup.PaymentPopupFragment"
+        android:label="fragment_payment_popup"
+        tools:layout="@layout/fragment_payment_popup" >
+        <action
+            android:id="@+id/action_paymentPopupFragment_to_detailTanahFragment"
+            app:destination="@id/detailTanahFragment"
+            app:popUpTo="@id/detailTanahFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_paymentPopupFragment_to_prediksiFragment"
+            app:destination="@id/prediksiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prediksiFragment"
+        android:name="com.okky.ezhousing.ui.prediksi.PrediksiFragment"
+        android:label="fragment_prediksi"
+        tools:layout="@layout/fragment_prediksi" >
+        <action
+            android:id="@+id/action_prediksiFragment_to_totalPopupFragment"
+            app:destination="@id/totalPopupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalPopupFragment"
+        android:name="com.okky.ezhousing.ui.prediksi.TotalPopupFragment"
+        android:label="fragment_total_popup"
+        tools:layout="@layout/fragment_total_popup" >
+        <action
+            android:id="@+id/action_totalPopupFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="total_number"
+            app:argType="string"
+            android:defaultValue="Rp 300.000" />
     </fragment>
 </navigation>

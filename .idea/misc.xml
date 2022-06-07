@@ -7,14 +7,20 @@
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/button_bangun_rumah.xml" value="0.1225" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/button_profile_disable.xml" value="0.15" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/button_profile_enable.xml" value="0.15" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/button_tambah_keranjang.xml" value="0.104" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.104" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/ic_baseline_help_24.xml" value="0.15" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.104" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/ic_round_add_24.xml" value="0.151" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/ic_round_add_shopping_cart_24.xml" value="0.104" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/ic_round_check_circle_outline_24.xml" value="0.104" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/message_blue.xml" value="0.1225" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/message_stroke.xml" value="0.1225" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/register_button.xml" value="0.1225" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/register_button_disable.xml" value="0.1225" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/drawable/search_home_edittext.xml" value="0.15" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
@@ -28,8 +34,12 @@
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_login.xml" value="0.2359375" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_maps.xml" value="0.25" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_payment_popup.xml" value="0.25" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_photo.xml" value="0.25" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_prediksi.xml" value="0.25" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/fragment_total_popup.xml" value="0.25" />
+        <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/item_list_notification.xml" value="0.25" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/item_list_small.xml" value="0.264" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/item_message.xml" value="0.25" />
         <entry key="..\:/Kuliah sek bosss/Bangkit/EZHousing/app/src/main/res/layout/toolbar.xml" value="0.536" />
