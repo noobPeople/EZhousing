@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
-import com.okky.ezhousing.R
-import com.okky.ezhousing.databinding.FragmentDetailTanahBinding
 import com.okky.ezhousing.databinding.FragmentPrediksiBinding
 import java.text.NumberFormat
 import java.util.*
@@ -32,15 +29,14 @@ class PrediksiFragment : Fragment() {
         configureSlider()
 
         binding?.btnTotalHarga?.setOnClickListener {
-            val total: Int = countresult()
+            val total: Int = counters()
             val strRupiah = total.convertRupiah()
-            val toTotalPopupFragment = PrediksiFragmentDirections.actionPrediksiFragmentToTotalPopupFragment()
-            toTotalPopupFragment.totalNumber = strRupiah
-            view.findNavController().navigate(toTotalPopupFragment)
+
+            TotalPopupFragment(strRupiah).show(parentFragmentManager, "payment_dialog")
         }
     }
 
-    private fun countresult(): Int {
+    private fun counters(): Int {
         val garasi = Integer.parseInt(binding?.tvNilaiGarasi?.text.toString())
         val lantai = Integer.parseInt(binding?.tvNilaiLantai?.text.toString())
         val kmt = Integer.parseInt(binding?.tvNilaiKmt?.text.toString())
@@ -98,7 +94,7 @@ class PrediksiFragment : Fragment() {
         }
     }
 
-    fun Any.convertRupiah(): String {
+    private fun Any.convertRupiah(): String {
         val localId = Locale("in", "ID")
         val formatter = NumberFormat.getCurrencyInstance(localId)
         val strFormat = formatter.format(this)

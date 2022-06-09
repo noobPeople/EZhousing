@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.okky.ezhousing.R
 import com.okky.ezhousing.databinding.FragmentDetailTanahBinding
 import com.okky.ezhousing.ui.home.DetailTanahFragmentArgs
+import com.okky.ezhousing.ui.paymentpopup.PaymentPopupFragment
 
 class DetailTanahFragment : Fragment() {
 
@@ -29,9 +30,13 @@ class DetailTanahFragment : Fragment() {
 
         showData()
 
-        binding?.btnBeli?.setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.action_detailTanahFragment_to_paymentPopupFragment)
-        )
+//        binding?.btnBeli?.setOnClickListener (
+//            Navigation.createNavigateOnClickListener(R.id.action_detailTanahFragment_to_paymentPopupFragment)
+//        )
+
+        binding?.btnBeli?.setOnClickListener {
+            PaymentPopupFragment().show(parentFragmentManager, "payment_dialog")
+        }
 
         binding?.btnPerkiraanHarga?.setOnClickListener (
             Navigation.createNavigateOnClickListener(R.id.action_detailTanahFragment_to_prediksiFragment)
