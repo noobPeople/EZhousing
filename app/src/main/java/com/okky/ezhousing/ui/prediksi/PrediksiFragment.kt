@@ -1,14 +1,22 @@
 package com.okky.ezhousing.ui.prediksi
 
+import android.icu.math.BigDecimal
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.okky.ezhousing.databinding.FragmentPrediksiBinding
+import com.okky.ezhousing.ml.Model
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.nio.ByteBuffer
+import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 import kotlin.math.roundToInt
+import kotlin.math.roundToLong
 
 class PrediksiFragment : Fragment() {
 
@@ -29,41 +37,75 @@ class PrediksiFragment : Fragment() {
         configureSlider()
 
         binding?.btnTotalHarga?.setOnClickListener {
-            val total: Int = counters()
-            val strRupiah = total.convertRupiah()
+            val total: FloatArray = counters()
+//            val newTotal = (total[0].toDouble() * 100000000).roundToInt()
+//            val newTotal = String.format("%.0f", total[0])
+//            total.get()
+            val dec = java.math.BigDecimal(total[0].toString())
+            val totalan = dec.toEngineeringString()
+            val newTotal = (total[0] * 10E45).roundToInt() * 1000
+            Log.e("ini total: ", newTotal.toString())
+            Log.e("ini totalan: ", totalan.toString())
+            Log.e("ini total sebenernya: ", total[0].toString())
+//            for (i in total.indices) {
+//                Log.e("ini totalnya: ", total[i].toString())
+//            }
+            val strRupiah = newTotal.convertRupiah()
 
             TotalPopupFragment(strRupiah).show(parentFragmentManager, "payment_dialog")
         }
     }
 
-    private fun counters(): Int {
+    private fun counters(): FloatArray {
         val garasi = Integer.parseInt(binding?.tvNilaiGarasi?.text.toString())
-        val lantai = Integer.parseInt(binding?.tvNilaiLantai?.text.toString())
+        val luasBangunan = Integer.parseInt(binding?.tvNilaiLantai?.text.toString())
         val kmt = Integer.parseInt(binding?.tvNilaiKmt?.text.toString())
         val kmm = Integer.parseInt(binding?.tvNilaiKmm?.text.toString())
-        val luas = Integer.parseInt(binding?.tvNilaiLuas?.text.toString())
+        val luasTanah = Integer.parseInt(binding?.tvNilaiLuas?.text.toString())
 
-        return (garasi + lantai + kmt + kmm + luas) * 10000
+//        val garasi = binding?.tvNilaiGarasi?.text
+//        val lantai = binding?.tvNilaiLantai?.text
+
+//        return (garasi.toFloat() + lantai.toFloat() + kmt + kmm + luas) * 10000
+
+        val byteBuffer : ByteBuffer = ByteBuffer.allocateDirect(5*4)
+        byteBuffer.putFloat(luasBangunan.toFloat())
+        byteBuffer.putFloat(luasTanah.toFloat())
+        byteBuffer.putFloat(kmt.toFloat())
+        byteBuffer.putFloat(kmm.toFloat())
+        byteBuffer.putFloat(garasi.toFloat())
+
+        val model = Model.newInstance(requireContext())
+
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 5), DataType.FLOAT32)
+        inputFeature0.loadBuffer(byteBuffer)
+
+        val outputs = model.process(inputFeature0)
+        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+
+        model.close()
+
+        return outputFeature0.floatArray
     }
 
     private fun configureSlider() {
         val garasiSlider = binding?.sldrGarasi
-        val lantaiSlider = binding?.sldrLantai
+        val luasBangunanSlider = binding?.sldrLantai
         val kmtSlider = binding?.sldrKmt
         val kmmSlider = binding?.sldrKmm
-        val luasSlider = binding?.sldrLuas
+        val luasTanahSlider = binding?.sldrLuas
 
         garasiSlider?.apply {
             valueFrom = 0F
-            valueTo = 1000F
+            valueTo = 27F
             addOnChangeListener { slider, value, fromUser ->
                 binding?.tvNilaiGarasi?.text = value.roundToInt().toString()
             }
         }
 
-        lantaiSlider?.apply {
+        luasBangunanSlider?.apply {
             valueFrom = 0F
-            valueTo = 27F
+            valueTo = 100F
             addOnChangeListener { slider, value, fromUser ->
                 binding?.tvNilaiLantai?.text = value.roundToInt().toString()
             }
@@ -85,9 +127,9 @@ class PrediksiFragment : Fragment() {
             }
         }
 
-        luasSlider?.apply {
+        luasTanahSlider?.apply {
             valueFrom = 0F
-            valueTo = 5000F
+            valueTo = 100F
             addOnChangeListener { slider, value, fromUser ->
                 binding?.tvNilaiLuas?.text = value.roundToInt().toString()
             }

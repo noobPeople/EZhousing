@@ -1,9 +1,12 @@
 package com.okky.ezhousing.preference
 
 import android.content.Context
+import androidx.fragment.app.FragmentActivity
 import com.okky.ezhousing.model.UserModel
+import com.okky.ezhousing.ui.auth.login.LoginActivity
+import com.okky.ezhousing.ui.dashboard.ProfileFragment
 
-internal class UserPreference(context: Context) {
+internal class UserPreference(context: FragmentActivity) {
     companion object {
         private const val PREFS_NAME = "user_pref"
         private const val NAME = "name"

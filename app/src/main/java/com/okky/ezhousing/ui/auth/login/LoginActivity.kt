@@ -1,14 +1,11 @@
 package com.okky.ezhousing.ui.auth.login
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.okky.ezhousing.MainActivity
-import com.okky.ezhousing.R
 import com.okky.ezhousing.api.ApiConfig
 import com.okky.ezhousing.api.response.LoginUserResponse
 import com.okky.ezhousing.databinding.ActivityLoginBinding
@@ -97,6 +94,7 @@ class LoginActivity : AppCompatActivity() {
     private fun moveMainActivity() {
         val intent = Intent(this@LoginActivity, MainActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun isLoading(isLoading: Boolean) {

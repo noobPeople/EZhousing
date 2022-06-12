@@ -40,7 +40,6 @@ class HomeFragment : Fragment() {
         homeViewModel.isLoading.observe(viewLifecycleOwner) {
             isLoading(it)
         }
-
     }
 
     override fun onDestroyView() {
@@ -66,6 +65,9 @@ class HomeFragment : Fragment() {
         toDetailTanahFragment.photo = data.photoUrl
         toDetailTanahFragment.tanah = data.name
         toDetailTanahFragment.description = data.description
+        toDetailTanahFragment.lon = data.lon.toString()
+        toDetailTanahFragment.lat = data.lat.toString()
+        toDetailTanahFragment.id = data.id
         findNavController().navigate(toDetailTanahFragment)
     }
 
